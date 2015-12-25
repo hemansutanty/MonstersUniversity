@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+ 
+<struts>
+    <constant name="struts.enable.DynamicMethodInvocation"
+        value="false" />
+    <constant name="struts.devMode" value="false" />
+ 
+    <package name="default" extends="struts-default" namespace="/">
+ 
+ 		<interceptors>
+  			<interceptor-stack name="appDefaultStack">
+    			<interceptor-ref name="defaultStack">
+     				<param name="exception.logEnabled">true</param>
+     				<param name="exception.logLevel">ERROR</param>
+    			</interceptor-ref>
+ 			</interceptor-stack>
+		</interceptors>
+ 
+		<default-interceptor-ref name="appDefaultStack" />
+ 		<global-results>
+     		<result name="securityerror">/securityerror.jsp</result>
+ 			<result name="error">/error.jsp</result>
+		</global-results>
+ 
+		<global-exception-mappings>
+ 			<exception-mapping exception="org.apache.struts.register.exceptions.SecurityBreachException" result="securityerror" />
+  			<exception-mapping exception="java.lang.Exception" result="error" />
+		</global-exception-mappings>
+		
+        <action name="add" class="net.viralpatel.contact.view.ContactAction" method="add">
+            <result name="success" type="chain">index</result>
+            <result name="input" type="chain">index</result>
+        </action>
+ 
+        <action name="delete" class="net.viralpatel.contact.view.ContactAction" method="delete">
+            <result name="success" type="chain">index</result>
+        </action>
+ 
+        <action name="index" class="net.viralpatel.contact.view.ContactAction">
+            <result name="success">index.jsp</result>
+        </action>
+        
+    </package>
+</struts>
