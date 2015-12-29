@@ -2,7 +2,7 @@ package com.hemansu.studentregistration.resources;
 
 import java.io.File;
 
-public class RegistartionConfig {
+public class RegistrationConfig {
 	public static String getPath(String path) {
 		
 		try {
@@ -19,7 +19,7 @@ public class RegistartionConfig {
 			
 		}
 		catch(Exception e){
-			RegistartionLogger.logError("RegistrationConfig", "getPath", e.toString());
+			RegistrationLogger.logError("RegistrationConfig", "getPath", e.toString());
 		}
 		return "";
 	}

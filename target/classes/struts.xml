@@ -6,7 +6,7 @@
 <struts>
     <constant name="struts.enable.DynamicMethodInvocation"
         value="false" />
-    <constant name="struts.devMode" value="false" />
+    <constant name="struts.devMode" value="true" />
  
     <package name="default" extends="struts-default" namespace="/">
  
@@ -30,18 +30,13 @@
   			<exception-mapping exception="java.lang.Exception" result="error" />
 		</global-exception-mappings>
 		
-        <action name="add" class="net.viralpatel.contact.view.ContactAction" method="add">
+        <action name="add" class="com.hemansu.studentregistration.view.RegisterAction" method="add">
             <result name="success" type="chain">index</result>
             <result name="input" type="chain">index</result>
         </action>
- 
-        <action name="delete" class="net.viralpatel.contact.view.ContactAction" method="delete">
-            <result name="success" type="chain">index</result>
-        </action>
- 
-        <action name="index" class="net.viralpatel.contact.view.ContactAction">
-            <result name="success">index.jsp</result>
-        </action>
+        <action name="registerInput" class="com.hemansu.studentregistration.view.RegisterAction" method="input" >
+    		<result name="input">register.jsp</result>
+		</action>
         
     </package>
 </struts>

@@ -10,7 +10,7 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.SimpleLayout;
 
 
-public class RegistartionLogger {
+public class RegistrationLogger {
 	
 	private static final Logger LOGGER = Logger.getLogger("errorLogger");
 	private static SimpleLayout layout = new SimpleLayout();
@@ -18,7 +18,7 @@ public class RegistartionLogger {
 	
 	static {
 		try {
-			appender = new FileAppender(layout, RegistartionConfig.getPath("errorLoggerPath"), true);
+			appender = new FileAppender(layout, RegistrationConfig.getPath("errorLoggerPath"), true);
 		} catch (IOException exception) {
 			
 		}

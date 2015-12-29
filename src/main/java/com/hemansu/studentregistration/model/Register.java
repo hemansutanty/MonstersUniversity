@@ -1,7 +1,6 @@
 package com.hemansu.studentregistration.model;
 
 import java.sql.Date;
-import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -57,22 +56,34 @@ public class Register {
 	//Guardian Information
 	//g is for guardian
 	
+	@Column
 	private String gGuardianName;
+	@Column
 	private String gAddressLine1;
+	@Column
 	private String gAddressLine2;
+	@Column
 	private String gCity;
+	@Column
 	private String gState;
+	@Column
 	private String gCountry;
+	@Column
 	private String gZipCode;
+	@Column
 	private String gContactNo1;
+	@Column
 	private String gContactNo2;
 	
 	//Required for Admission Details
+	@Column
 	private long aRank;
+	@Column
 	private int a12thPercentage;
+	@Column
 	private int a10thPercentage;
 	
-	private List<String> aSubjectsApplied;
+	private String aBranch;
 
 	/**
 	 * @return the aId
@@ -467,17 +478,19 @@ public class Register {
 	}
 
 	/**
-	 * @return the aSubjectsApplied
+	 * @return the aBranch
 	 */
-	public List<String> getaSubjectsApplied() {
-		return aSubjectsApplied;
+	public String getaBranch() {
+		return aBranch;
 	}
 
 	/**
-	 * @param aSubjectsApplied the aSubjectsApplied to set
+	 * @param aBranch the aBranch to set
 	 */
-	public void setaSubjectsApplied(List<String> aSubjectsApplied) {
-		this.aSubjectsApplied = aSubjectsApplied;
+	public void setaBranch(String aBranch) {
+		this.aBranch = aBranch;
 	}
+
+	
 	
 }
