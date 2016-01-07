@@ -5,10 +5,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>University Registration Page</title>
+<s:head/>
 </head>
 <body>
 	<h2>Register yourself for the University</h2>
-	<s:form action="add">
+	<s:form action="add" method="post">
 		<s:label for="personal_information" value="Personal Information"></s:label>
 		<s:label for="piseparator" value="-------------------------"></s:label>
 		<s:textfield key="registerBean.aFirstName" ></s:textfield>
@@ -18,7 +19,6 @@
 		<s:textfield key="registerBean.aEmail"></s:textfield>
 		<s:radio key="registerBean.aGender" list="genders" />
 		<s:textfield key="registerBean.aNationality"></s:textfield>
-		
 		<s:textfield key="registerBean.aAddressLine1"></s:textfield>
 		<s:textfield key="registerBean.aAddressLine2"></s:textfield>
 		<s:textfield key="registerBean.aCity"></s:textfield>
@@ -53,6 +53,12 @@
 		
 		<s:textfield key="registerBean.a12thPercentage"></s:textfield>
 		<s:textfield key="registerBean.a10thPercentage"></s:textfield>
+		
+		<br><br>
+		
+		<s:label for="login_details" value="Login Details"></s:label>
+		<s:label for="admissionseparator" value="-------------------------"></s:label>
+		<s:textfield key="registerBean.aPassword"></s:textfield>
 		
 		<s:submit key="submit"></s:submit>
 	</s:form>

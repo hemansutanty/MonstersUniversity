@@ -82,7 +82,9 @@ public class Register {
 	private int a12thPercentage;
 	@Column
 	private int a10thPercentage;
-	
+	@Column
+	private String aPassword;
+	@Column
 	private String aBranch;
 
 	/**
@@ -491,6 +493,17 @@ public class Register {
 		this.aBranch = aBranch;
 	}
 
-	
-	
+	/**
+	 * @return the aPassword
+	 */
+	public String getaPassword() {
+		return aPassword;
+	}
+
+	/**
+	 * @param aPassword the aPassword to set
+	 */
+	public void setaPassword(String aPassword) {
+		this.aPassword = aPassword;
+	}	
 }

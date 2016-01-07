@@ -16,7 +16,6 @@ public class RegistrationConfig {
 				}
 				return tillDesktop + "ErrorLogFile.txt";
 			}
-			
 		}
 		catch(Exception e){
 			RegistrationLogger.logError("RegistrationConfig", "getPath", e.toString());

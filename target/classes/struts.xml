@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE struts PUBLIC
-    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
-    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
  
 <struts>
-    <constant name="struts.enable.DynamicMethodInvocation"
-        value="false" />
+    <constant name="struts.enable.DynamicMethodInvocation" value="false" />
     <constant name="struts.devMode" value="true" />
  
     <package name="default" extends="struts-default" namespace="/">
@@ -30,9 +27,9 @@
   			<exception-mapping exception="java.lang.Exception" result="error" />
 		</global-exception-mappings>
 		
-        <action name="add" class="com.hemansu.studentregistration.view.RegisterAction" method="add">
-            <result name="success" type="chain">index</result>
-            <result name="input" type="chain">index</result>
+        <action name="add" class="com.hemansu.studentregistration.view.RegisterAction" method="addDetails">
+            <result name="success">thankyou.jsp</result>
+            <result name="input">register.jsp</result>
         </action>
         <action name="registerInput" class="com.hemansu.studentregistration.view.RegisterAction" method="input" >
     		<result name="input">register.jsp</result>

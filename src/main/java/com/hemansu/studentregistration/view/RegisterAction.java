@@ -34,4 +34,8 @@ public class RegisterAction extends ActionSupport{
 		return Arrays.asList(genders);
 		
 	}
+	public String addDetails(){
+		//System.out.println("Hello There");
+		return SUCCESS;
+	}
 }
