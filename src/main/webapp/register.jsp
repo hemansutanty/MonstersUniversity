@@ -9,13 +9,15 @@
 </head>
 <body>
 	<h2>Register yourself for the University</h2>
-	<s:form action="add" method="post">
+	<s:form action="add">
 		<s:label for="personal_information" value="Personal Information"></s:label>
 		<s:label for="piseparator" value="-------------------------"></s:label>
-		<s:textfield key="registerBean.aFirstName" ></s:textfield>
-		<s:textfield key="registerBean.aMiddleName" ></s:textfield>
-		<s:textfield key="registerBean.aLastName" ></s:textfield>
-		<s:textfield key="registerBean.aDateOfBirth" ></s:textfield>
+		
+		<s:textfield key="registerBean.firstNameStudent" ></s:textfield>
+		<s:textfield key="registerBean.middleNameStudent" ></s:textfield>
+		<s:textfield key="registerBean.lastNameStudent" ></s:textfield>
+		
+		<s:textfield key="registerBean.dateOfBirth" ></s:textfield>
 		<s:textfield key="registerBean.aEmail"></s:textfield>
 		<s:radio key="registerBean.aGender" list="genders" />
 		<s:textfield key="registerBean.aNationality"></s:textfield>

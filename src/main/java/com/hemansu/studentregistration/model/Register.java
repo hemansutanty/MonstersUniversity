@@ -1,509 +1,130 @@
 package com.hemansu.studentregistration.model;
 
-import java.sql.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
+
+import java.io.Serializable;
+import java.util.Date;
+
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 
 
 @Entity
 @Table(name="register")
-public class Register {
+public class Register implements Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	//personal Information attributes
 	//a is for applicant
 	@Id
 	@GeneratedValue
-	@Column
-	private long aId;
-	@Column
-	private String aFirstname;
-	@Column
-	private String aMiddlename;
-	@Column
-	private String aLastname;
-	@Column
-	private Date aDateOFBirth;
-	@Column
+	private int aId;
+	@Column(name="afirstname")
+	private String firstNameStudent;
+	@Column(name="amiddlename")
+	private String middleNameStudent;
+	@Column(name="alastname")
+	private String lastNameStudent;
+	@Column(name="adateofbirth")
+	@Temporal(TemporalType.DATE)
+	private Date aDateOfBirth;
+	@Column(name="aemail")
 	private String aEmail;
-	@Column
+	@Column(name="agender")
 	private String aGender;
-	@Column
+	@Column(name="anationality")
 	private String aNationality;
 	
 	//Address and contact of the applicant attributes
-	@Column
+	@Column(name="aaddressline1")
 	private String aAddressLine1;
-	@Column
+	@Column(name="aaddressline2")
 	private String aAddressLine2;
-	@Column
+	@Column(name="acity")
 	private String aCity;
-	@Column
+	@Column(name="astate")
 	private String aState;
-	@Column
+	@Column(name="acountry")
 	private String aCountry;
-	@Column
+	@Column(name="azipcode")
 	private String aZipCode;
-	@Column
+	@Column(name="acontactno1")
 	private String aContactNo1;
-	@Column
+	@Column(name="acontactno2")
 	private String aContactNo2;
 	
 	//Guardian Information
 	//g is for guardian
-	
-	@Column
+	@Column(name="gguardianname")
 	private String gGuardianName;
-	@Column
+	@Column(name="gaddressline1")
 	private String gAddressLine1;
-	@Column
+	@Column(name="gaddressline2")
 	private String gAddressLine2;
-	@Column
+	@Column(name="gcity")
 	private String gCity;
-	@Column
+	@Column(name="gstate")
 	private String gState;
-	@Column
+	@Column(name="gcountry")
 	private String gCountry;
-	@Column
+	@Column(name="gzipcode")
 	private String gZipCode;
-	@Column
+	@Column(name="gcontactno1")
 	private String gContactNo1;
-	@Column
+	@Column(name="gcontactno2")
 	private String gContactNo2;
 	
 	//Required for Admission Details
-	@Column
-	private long aRank;
-	@Column
+	@Column(name="arank")
+	private int aRank;
+	@Column(name="a12thpercentage")
 	private int a12thPercentage;
-	@Column
+	@Column(name="a10thpercentage")
 	private int a10thPercentage;
-	@Column
+	@Column(name="apassword")
 	private String aPassword;
-	@Column
-	private String aBranch;
-
 	/**
-	 * @return the aId
+	 * @return the firstNameStudent
 	 */
-	public long getaId() {
-		return aId;
+	public String getFirstNameStudent() {
+		return firstNameStudent;
 	}
-
 	/**
-	 * @param aId the aId to set
+	 * @param firstNameStudent the firstNameStudent to set
 	 */
-	public void setaId(long aId) {
-		this.aId = aId;
+	public void setFirstNameStudent(String firstNameStudent) {
+		this.firstNameStudent = firstNameStudent;
 	}
-
 	/**
-	 * @return the aFirstname
+	 * @return the middleNameStudent
 	 */
-	public String getaFirstname() {
-		return aFirstname;
+	public String getMiddleNameStudent() {
+		return middleNameStudent;
 	}
-
 	/**
-	 * @param aFirstname the aFirstname to set
+	 * @param middleNameStudent the middleNameStudent to set
 	 */
-	public void setaFirstname(String aFirstname) {
-		this.aFirstname = aFirstname;
+	public void setMiddleNameStudent(String middleNameStudent) {
+		this.middleNameStudent = middleNameStudent;
 	}
-
 	/**
-	 * @return the aMiddlename
+	 * @return the lastNameStudent
 	 */
-	public String getaMiddlename() {
-		return aMiddlename;
+	public String getLastNameStudent() {
+		return lastNameStudent;
 	}
-
 	/**
-	 * @param aMiddlename the aMiddlename to set
+	 * @param lastNameStudent the lastNameStudent to set
 	 */
-	public void setaMiddlename(String aMiddlename) {
-		this.aMiddlename = aMiddlename;
+	public void setLastNameStudent(String lastNameStudent) {
+		this.lastNameStudent = lastNameStudent;
 	}
-
-	/**
-	 * @return the aLastname
-	 */
-	public String getaLastname() {
-		return aLastname;
-	}
-
-	/**
-	 * @param aLastname the aLastname to set
-	 */
-	public void setaLastname(String aLastname) {
-		this.aLastname = aLastname;
-	}
-
-	/**
-	 * @return the aDateOFBirth
-	 */
-	public Date getaDateOFBirth() {
-		return aDateOFBirth;
-	}
-
-	/**
-	 * @param aDateOFBirth the aDateOFBirth to set
-	 */
-	public void setaDateOFBirth(Date aDateOFBirth) {
-		this.aDateOFBirth = aDateOFBirth;
-	}
-
-	/**
-	 * @return the aEmail
-	 */
-	public String getaEmail() {
-		return aEmail;
-	}
-
-	/**
-	 * @param aEmail the aEmail to set
-	 */
-	public void setaEmail(String aEmail) {
-		this.aEmail = aEmail;
-	}
-
-	/**
-	 * @return the aGender
-	 */
-	public String getaGender() {
-		return aGender;
-	}
-
-	/**
-	 * @param aGender the aGender to set
-	 */
-	public void setaGender(String aGender) {
-		this.aGender = aGender;
-	}
-
-	/**
-	 * @return the aNationality
-	 */
-	public String getaNationality() {
-		return aNationality;
-	}
-
-	/**
-	 * @param aNationality the aNationality to set
-	 */
-	public void setaNationality(String aNationality) {
-		this.aNationality = aNationality;
-	}
-
-	/**
-	 * @return the aAddressLine1
-	 */
-	public String getaAddressLine1() {
-		return aAddressLine1;
-	}
-
-	/**
-	 * @param aAddressLine1 the aAddressLine1 to set
-	 */
-	public void setaAddressLine1(String aAddressLine1) {
-		this.aAddressLine1 = aAddressLine1;
-	}
-
-	/**
-	 * @return the aAddressLine2
-	 */
-	public String getaAddressLine2() {
-		return aAddressLine2;
-	}
-
-	/**
-	 * @param aAddressLine2 the aAddressLine2 to set
-	 */
-	public void setaAddressLine2(String aAddressLine2) {
-		this.aAddressLine2 = aAddressLine2;
-	}
-
-	/**
-	 * @return the aCity
-	 */
-	public String getaCity() {
-		return aCity;
-	}
-
-	/**
-	 * @param aCity the aCity to set
-	 */
-	public void setaCity(String aCity) {
-		this.aCity = aCity;
-	}
-
-	/**
-	 * @return the aState
-	 */
-	public String getaState() {
-		return aState;
-	}
-
-	/**
-	 * @param aState the aState to set
-	 */
-	public void setaState(String aState) {
-		this.aState = aState;
-	}
-
-	/**
-	 * @return the aCountry
-	 */
-	public String getaCountry() {
-		return aCountry;
-	}
-
-	/**
-	 * @param aCountry the aCountry to set
-	 */
-	public void setaCountry(String aCountry) {
-		this.aCountry = aCountry;
-	}
-
-	/**
-	 * @return the aZipCode
-	 */
-	public String getaZipCode() {
-		return aZipCode;
-	}
-
-	/**
-	 * @param aZipCode the aZipCode to set
-	 */
-	public void setaZipCode(String aZipCode) {
-		this.aZipCode = aZipCode;
-	}
-
-	/**
-	 * @return the aContactNo1
-	 */
-	public String getaContactNo1() {
-		return aContactNo1;
-	}
-
-	/**
-	 * @param aContactNo1 the aContactNo1 to set
-	 */
-	public void setaContactNo1(String aContactNo1) {
-		this.aContactNo1 = aContactNo1;
-	}
-
-	/**
-	 * @return the aContactNo2
-	 */
-	public String getaContactNo2() {
-		return aContactNo2;
-	}
-
-	/**
-	 * @param aContactNo2 the aContactNo2 to set
-	 */
-	public void setaContactNo2(String aContactNo2) {
-		this.aContactNo2 = aContactNo2;
-	}
-
-	/**
-	 * @return the gGuardianName
-	 */
-	public String getgGuardianName() {
-		return gGuardianName;
-	}
-
-	/**
-	 * @param gGuardianName the gGuardianName to set
-	 */
-	public void setgGuardianName(String gGuardianName) {
-		this.gGuardianName = gGuardianName;
-	}
-
-	/**
-	 * @return the gAddressLine1
-	 */
-	public String getgAddressLine1() {
-		return gAddressLine1;
-	}
-
-	/**
-	 * @param gAddressLine1 the gAddressLine1 to set
-	 */
-	public void setgAddressLine1(String gAddressLine1) {
-		this.gAddressLine1 = gAddressLine1;
-	}
-
-	/**
-	 * @return the gAddressLine2
-	 */
-	public String getgAddressLine2() {
-		return gAddressLine2;
-	}
-
-	/**
-	 * @param gAddressLine2 the gAddressLine2 to set
-	 */
-	public void setgAddressLine2(String gAddressLine2) {
-		this.gAddressLine2 = gAddressLine2;
-	}
-
-	/**
-	 * @return the gCity
-	 */
-	public String getgCity() {
-		return gCity;
-	}
-
-	/**
-	 * @param gCity the gCity to set
-	 */
-	public void setgCity(String gCity) {
-		this.gCity = gCity;
-	}
-
-	/**
-	 * @return the gState
-	 */
-	public String getgState() {
-		return gState;
-	}
-
-	/**
-	 * @param gState the gState to set
-	 */
-	public void setgState(String gState) {
-		this.gState = gState;
-	}
-
-	/**
-	 * @return the gCountry
-	 */
-	public String getgCountry() {
-		return gCountry;
-	}
-
-	/**
-	 * @param gCountry the gCountry to set
-	 */
-	public void setgCountry(String gCountry) {
-		this.gCountry = gCountry;
-	}
-
-	/**
-	 * @return the gZipCode
-	 */
-	public String getgZipCode() {
-		return gZipCode;
-	}
-
-	/**
-	 * @param gZipCode the gZipCode to set
-	 */
-	public void setgZipCode(String gZipCode) {
-		this.gZipCode = gZipCode;
-	}
-
-	/**
-	 * @return the gContactNo1
-	 */
-	public String getgContactNo1() {
-		return gContactNo1;
-	}
-
-	/**
-	 * @param gContactNo1 the gContactNo1 to set
-	 */
-	public void setgContactNo1(String gContactNo1) {
-		this.gContactNo1 = gContactNo1;
-	}
-
-	/**
-	 * @return the gContactNo2
-	 */
-	public String getgContactNo2() {
-		return gContactNo2;
-	}
-
-	/**
-	 * @param gContactNo2 the gContactNo2 to set
-	 */
-	public void setgContactNo2(String gContactNo2) {
-		this.gContactNo2 = gContactNo2;
-	}
-
-	/**
-	 * @return the aRank
-	 */
-	public long getaRank() {
-		return aRank;
-	}
-
-	/**
-	 * @param aRank the aRank to set
-	 */
-	public void setaRank(long aRank) {
-		this.aRank = aRank;
-	}
-
-	/**
-	 * @return the a12thPercentage
-	 */
-	public int getA12thPercentage() {
-		return a12thPercentage;
-	}
-
-	/**
-	 * @param a12thPercentage the a12thPercentage to set
-	 */
-	public void setA12thPercentage(int a12thPercentage) {
-		this.a12thPercentage = a12thPercentage;
-	}
-
-	/**
-	 * @return the a10thPercentage
-	 */
-	public int getA10thPercentage() {
-		return a10thPercentage;
-	}
-
-	/**
-	 * @param a10thPercentage the a10thPercentage to set
-	 */
-	public void setA10thPercentage(int a10thPercentage) {
-		this.a10thPercentage = a10thPercentage;
-	}
-
-	/**
-	 * @return the aBranch
-	 */
-	public String getaBranch() {
-		return aBranch;
-	}
-
-	/**
-	 * @param aBranch the aBranch to set
-	 */
-	public void setaBranch(String aBranch) {
-		this.aBranch = aBranch;
-	}
-
-	/**
-	 * @return the aPassword
-	 */
-	public String getaPassword() {
-		return aPassword;
-	}
-
-	/**
-	 * @param aPassword the aPassword to set
-	 */
-	public void setaPassword(String aPassword) {
-		this.aPassword = aPassword;
-	}	
 }
