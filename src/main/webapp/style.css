@@ -1,0 +1,15 @@
+h2{
+	text-align: center;
+}
+body{
+	padding-left: 8em;
+	padding-right: 8em;
+	padding-bottom: 3em;
+}
+#saveButton{
+			position: relative;
+			margin-left:45%;
+}
+.center{
+	
+}
