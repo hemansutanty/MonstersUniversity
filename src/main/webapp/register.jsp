@@ -6,8 +6,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<title>University Registration Page</title>
-	<link href="<s:url value ="style.css"/>" rel="stylesheet" type="text/css"/>
-	<s:head/> 
+	<link href="<s:url value ="style.css"/>" rel="stylesheet" type="text/css"/> 
 	<sb:head/>
 </head>
 <body>
