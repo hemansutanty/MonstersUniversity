@@ -1,15 +1,11 @@
 h2{
 	text-align: center;
+	text-transform: uppercase;
 }
 body{
-	padding-left: 8em;
-	padding-right: 8em;
-	padding-bottom: 3em;
+	padding: 2em;
 }
-#saveButton{
-			position: relative;
-			margin-left:45%;
-}
-.center{
-	
+#submitBtn{
+	position:relative;
+	left:50%;
 }
