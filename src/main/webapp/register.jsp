@@ -5,25 +5,29 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-	<title>University Registration Page</title>
-	<link href="<s:url value ="style.css"/>" rel="stylesheet" type="text/css"/> 
+	<title>Monsters University Registration</title>
+	<link href="<s:url value ="style.css"/>" rel="stylesheet" type="text/css"/>
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  	<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script> 
 	<sb:head/>
 </head>
 <body>
-	<h2>Register</h2>
+	<h2 style="color:#FF5000;font-weight: bold">Register</h2>
 	<hr>
     <div class="container">
 			<div class="row">
 			
-					<s:form action="add" enctype="multipart/form-data" theme="bootstrap" cssClass="form-horizontal ">
+					<s:form action="add" enctype="multipart/form-data" theme="bootstrap" cssClass="form-horizontal">
 		
 					<s:textfield key="registerBean.firstNameStudent" placeholder="Enter Student's First Name"></s:textfield>
 					<s:textfield key="registerBean.middleNameStudent" placeholder="Enter Student's Middle Name"></s:textfield>
 					<s:textfield key="registerBean.lastNameStudent" placeholder="Enter Student's Last Name"></s:textfield>
 		
-					<s:textfield key="registerBean.dateOfBirthStudent" placeholder="Enter Date of Birth in format mm/dd/yyyy"></s:textfield>
+					<s:textfield key="registerBean.dateOfBirthStudent" placeholder="Enter Date of Birth in format mm/dd/yyyy" id="datepicker">
+					</s:textfield>
 					<s:textfield key="registerBean.emailStudent" placeholder="Enter Student's email id"></s:textfield>
-					<s:radio key="registerBean.genderStudent" list="genders"/>
+					<s:radio key="registerBean.genderStudent" list="genders" value="defaultGenderValue"/>
 					<s:textfield key="registerBean.nationalityStudent" placeholder="Enter Nationality of Student"></s:textfield>
 					<s:textfield key="registerBean.addressLine1Student" placeholder="Enter the House No or Area for Student's address"></s:textfield>
 					<s:textfield key="registerBean.addressLine2Student" placeholder="Enter Colony or Street for Student's address"></s:textfield>
@@ -63,6 +67,13 @@
 				</s:form>
 			</div>
 		</div>
-	
+	<script>
+		$(function() {
+	    	$( "#datepicker" ).datepicker({
+	      	changeMonth: true,
+	      	changeYear: true
+	    	});
+	  	});
+  </script>
 </body>
 </html>

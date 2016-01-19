@@ -40,6 +40,9 @@ public class RegisterAction extends ActionSupport{
 		return Arrays.asList(genders);
 		
 	}
+	public String getDefaultGenderValue(){
+		return "Not Sure";
+	}
 	public String execute(){
 		Integer numOfRows = null;
 		try{
@@ -52,123 +55,94 @@ public class RegisterAction extends ActionSupport{
 		return SUCCESS;
 	}
 	public void validate(){
+		
+		clearFieldErrors();clearErrors();
 		if(registerBean.getFirstNameStudent().length()==0){
-			clearFieldErrors();
 			addFieldError("registerBean.firstNameStudent", "Please Enter the First Name of the Student");
 		}
 		if(registerBean.getLastNameStudent().length()==0){
-			clearFieldErrors();
 			addFieldError("registerBean.lastNameStudent", "Please Enter the Last Name of the Student");
 		}
 		if(registerBean.getDateOfBirthStudent()==null){
-			clearFieldErrors();
 			addFieldError("registerBean.dateOfBirthStudent", "Please Enter the Date of Birth of the Student");
 		}
 		if(registerBean.getEmailStudent().length()==0){
-			clearFieldErrors();
 			addFieldError("registerBean.emailStudent", "Please Enter the email address of the Student");
 		}
 		if(registerBean.getGenderStudent()==null){
-			clearFieldErrors();
-			addFieldError("registerBean.genderStudent", "Please choose a gender option of the Student");
+			addFieldError("registerBean.genderStudent", "Please choose your gender");
 		}
 		if(registerBean.getNationalityStudent().length()==0){
-			clearFieldErrors();
 			addFieldError("registerBean.nationalityStudent", "Please enter the nationality of the Student");
 		}
 		if(registerBean.getAddressLine1Student().length()==0){
-			clearFieldErrors();
 			addFieldError("registerBean.addressLine1Student", "Please enter the Address of the Student");
 		}
 		if(registerBean.getCityStudent().length()==0){
-			clearFieldErrors();
 			addFieldError("registerBean.cityStudent", "Please enter the City");
 		}
 		if(registerBean.getStateStudent().length()==0){
-			clearFieldErrors();
 			addFieldError("registerBean.stateStudent", "Please enter the State");
 		}
 		if(registerBean.getCountryStudent().length()==0){
-			clearFieldErrors();
 			addFieldError("registerBean.countryStudent", "Please enter the Country");
 		}
 		if(registerBean.getZipCodeStudent().length()==0){
-			clearFieldErrors();
 			addFieldError("registerBean.zipCodeStudent", "Please enter the Area Zip Code");
 		}
-		else if(registerBean.getZipCodeStudent().length()!=6){
-			clearFieldErrors();
-			addFieldError("registerBean.zipCodeStudent", "Area Zip Code should be of 6 digits");
-		}
-		else if(!registerBean.getZipCodeStudent().matches("[0-9]{6}")){
-			clearFieldErrors();
-			addFieldError("registerBean.zipCodeStudent", "Area Zip Code should contain digits only");
+		if(registerBean.getZipCodeStudent().length()!=0 && !registerBean.getZipCodeStudent().matches("[0-9]{6}")){
+			addFieldError("registerBean.zipCodeStudent", "Area Zip Code should contain 6 digits exactly");
 		}
 		if(registerBean.getContactNo1Student().length()==0){
-			clearFieldErrors();
 			addFieldError("registerBean.contactNo1Student", "Please enter the Contact number of the Student");
 		}
-		else if(registerBean.getContactNo1Student().length()!=10){
-			clearFieldErrors();
-			addFieldError("registerBean.contactNo1Student", "Phone Number should be of 10 digits");
+		if(registerBean.getContactNo1Student().length()!=0 && !registerBean.getContactNo1Student().matches("[0-9]{10}")){
+			addFieldError("registerBean.contactNo1Student", "Contact number should contain 10 digits exactly");
 		}
-		else if(!registerBean.getContactNo1Student().matches("[0-9]{10}")){
-			clearFieldErrors();
-			addFieldError("registerBean.contactNo1Student", "Phone Number should contain digits only");
-			
+		if(registerBean.getContactNo2Student().length()!=0 && !registerBean.getContactNo2Student().matches("[0-9]{10}")){
+			addFieldError("registerBean.contactNo2Student", "Contact number should contain 10 digits exactly");
 		}
 		if(registerBean.getGuardianName().length()==0){
-			clearFieldErrors();
 			addFieldError("registerBean.guardianName", "Please enter the Guardian's name");
 		}
 		if(registerBean.getAddressLine1Guardian().length()==0){
-			clearFieldErrors();
 			addFieldError("registerBean.addressLine1Guardian", "Please enter the address of the Guardian");
 		}
 		if(registerBean.getCityGuardian().length()==0){
-			clearFieldErrors();
 			addFieldError("registerBean.cityGuardian", "Please enter the City");
 		}
 		if(registerBean.getStateGuardian().length()==0){
-			clearFieldErrors();
 			addFieldError("registerBean.stateGuardian", "Please enter the State");
 		}
 		if(registerBean.getCountryGuardian().length()==0){
-			clearFieldErrors();
 			addFieldError("registerBean.countryGuardian", "Please enter the Country");
 		}
 		if(registerBean.getZipCodeGuardian().length()==0){
-			clearFieldErrors();
 			addFieldError("registerBean.zipCodeGuardian", "Please enter the Area Zip Code");
 		}
-		else if(registerBean.getZipCodeGuardian().length()!=6){
-			clearFieldErrors();
-			addFieldError("registerBean.zipCodeGuardian", "Area Zip Code should be of 6 digits");
-		}
-		else if(!registerBean.getZipCodeGuardian().matches("[0-9]{6}")){
-			clearFieldErrors();
-			addFieldError("registerBean.zipCodeGuardian", "Area Zip Code should contain digits only");
+		if(registerBean.getZipCodeGuardian().length()!=0 && !registerBean.getZipCodeGuardian().matches("[0-9]{6}")){
+			addFieldError("registerBean.zipCodeStudent", "Area Zip Code should contain 6 digits exactly");
 		}
 		if(registerBean.getContactNo1Guardian().length()==0){
-			clearFieldErrors();
 			addFieldError("registerBean.contactNo1Guardian", "Please enter the Contact number of the Guardian");
 		}
-		else if(registerBean.getContactNo1Guardian().length()!=10){
-			clearFieldErrors();
-			addFieldError("registerBean.contactNo1Guardian", "Phone Number should be of 10 digits");
+		if(registerBean.getContactNo1Guardian().length()!=0 && !registerBean.getContactNo1Guardian().matches("[0-9]{10}")){
+			addFieldError("registerBean.contactNo1Guardian", "Contact number should contain 10 digits exactly");
 		}
-		else if(!registerBean.getContactNo1Guardian().matches("[0-9]{10}")){
-			clearFieldErrors();
-			addFieldError("registerBean.contactNo1Guardian", "Phone Number should contain digits only");
-			
+		if(registerBean.getContactNo2Guardian().length()!=0 && !registerBean.getContactNo2Guardian().matches("[0-9]{10}")){
+			addFieldError("registerBean.contactNo2Guardian", "Contact number should contain 10 digits exactly");
 		}
 		if(registerBean.getIitjeeRank()==0){
-			clearFieldErrors();
-			addFieldError("registerBean.contactNo1Guardian", "Please enter the Contact number of the Guardian");
+			addFieldError("registerBean.iitjeeRank", "Please enter IITJEE rank");
 		}
-		else if(registerBean.getContactNo1Guardian().length()!=10){
-			clearFieldErrors();
-			addFieldError("registerBean.contactNo1Guardian", "Phone Number should be of 10 digits");
+		if(registerBean.getPercentage12th()==0){
+			addFieldError("registerBean.percentage12th", "Please enter percentage in 12th");
+		}
+		if(registerBean.getPercentage10th()==0){
+			addFieldError("registerBean.percentage10th", "Please enter percentage in 10th");
+		}
+		if(registerBean.getPassword().length()==0){
+			addFieldError("registerBean.password", "Please enter Password");
 		}
 	}
 }

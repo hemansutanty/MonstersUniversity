@@ -1,11 +1,82 @@
 h2{
 	text-align: center;
 	text-transform: uppercase;
+	font-weight: bold;
+	color: #00FFFC;
 }
 body{
+	background-image: url("school.png");
 	padding: 2em;
 }
 #submitBtn{
 	position:relative;
-	left:50%;
+	left:58%;
 }
+.btnCustom {
+	
+  	border: 1px solid #f2ae5d;
+  	display: inline-block;
+  	height: 35px;
+  	min-width: 10em;
+  	color: #f2ae5d;
+  	font-weight: bold;
+  	font-style: normal;
+  	text-transform: uppercase;
+  	letter-spacing: 1px;
+  	text-align: center;
+  	padding-top: 0.8em;
+  	font-family: Sans-serif;
+  	text-decoration: none;
+}
+.btnCustom:hover {
+  	background-color: #f2ae5d;
+  	color: #fff;
+  	text-decoration: none;
+}
+#btn1{
+	position: absolute;
+	left:45%;
+	top:55%;
+}
+#btn2{
+	position: absolute;
+	left:45%;
+	top:65%;
+}
+.form-signin {
+  			max-width: 380px;
+  			padding: 15px 35px 45px;
+  			margin: 0 auto;
+  			background-color: #fff;
+  			border: 1px solid rgba(0,0,0,0.1);  
+
+  			.form-signin-heading,.checkbox {
+	  			margin-bottom: 30px;
+			}
+
+			.form-control {
+	  			position: relative;
+	  			font-size: 16px;
+	  			height: auto;
+	  			padding: 20px;
+				@include box-sizing(border-box);
+
+				&:focus {
+		  			z-index: 2;
+				}
+			}
+
+			input[type="text"] {
+	  			
+	  			border-bottom-left-radius: 0;
+	  			border-bottom-right-radius: 0;
+	  			padding-bottom: 20px;
+			}
+
+			input[type="password"] {
+	  			
+	  			border-top-left-radius: 0;
+	  			border-top-right-radius: 0;
+	  			padding-bottom: 20px;
+			}
+		}

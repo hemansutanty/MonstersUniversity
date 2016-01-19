@@ -11,7 +11,6 @@ public class RegisterDAO {
 		Integer iD = null;
 		Session session = null;
 		try{
-			
 			 session = HibernateUtil.getSessionFactory().getCurrentSession();
 			 session.beginTransaction();
 			 session.save(registerBean);
