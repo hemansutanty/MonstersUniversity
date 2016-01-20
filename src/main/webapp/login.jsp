@@ -10,17 +10,16 @@
 </head>
 <body>
 	<div class="wrapper">
-    <s:form action="add" enctype="multipart/form-data" cssClass="form-signin">       
-      <h2 class="form-signin-heading">login</h2>
-      <hr>
-      <input type="text" class="form-control" name="username" placeholder="Email Address" required="" autofocus="" />
-      <br>
-      <input type="password" class="form-control" name="password" placeholder="Password" required=""/>
-      <br>      
-      <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
-      <br>
-      <a href="<s:url action="registerInput"/>">Not Registered yet? Click here to register</a>   
-    </s:form>
-</div>
+    	<s:form action="login" enctype="multipart/form-data" cssClass="form-signin">       
+      	<h2 class="form-signin-heading">login</h2>
+      	<hr>
+      	<s:textfield  name="loginBean.colgId" placeholder="Enter the University ID" cssClass="form-control" ></s:textfield>
+	  	<s:textfield  name="loginBean.password" placeholder="Enter the Password" cssClass="form-control"></s:textfield>
+      	<s:submit key="submit" cssClass="btn btn-lg btn-primary btn-block"></s:submit>      
+      	<br>
+      	  
+   	 	</s:form>
+    	<a href="<s:url action="registerInput"/>">Not Registered yet? Click here to register</a> 
+	</div>
 </body>
 </html>

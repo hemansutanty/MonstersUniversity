@@ -44,10 +44,8 @@ public class RegisterAction extends ActionSupport{
 		return "Not Sure";
 	}
 	public String execute(){
-		Integer numOfRows = null;
 		try{
-			numOfRows = registerDAOObject.saveStudent(getRegisterBean());
-			System.out.println(numOfRows);
+			registerDAOObject.saveStudent(getRegisterBean());
 		}
 		catch(Exception ex){
 			System.out.println(ex.getMessage());

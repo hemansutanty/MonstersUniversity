@@ -11,7 +11,7 @@
 </head>
 <body>
 	<p>
-		<a class="btnCustom" id="btn1" href="login.jsp" >Login</a>
+		<a class="btnCustom" id="btn1" href="<s:url action="loginInput"/>" >Login</a>
 	</p>
 	<p>
 		<a class="btnCustom" id="btn2" href="<s:url action="registerInput"/>" >Register</a>

@@ -1,6 +1,7 @@
 package com.hemansu.studentregistration.ui;
 
-import com.hemansu.studentregistration.controller.RegisterDAO;
+import com.hemansu.studentregistration.controller.LoginDAO;
+import com.hemansu.studentregistration.model.Login;
 import com.hemansu.studentregistration.model.Register;
 
 public class TestClass {
@@ -8,11 +9,13 @@ public class TestClass {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		try{
-			Register register = new Register();
-			//register.setaFirstName("Hemansu");
-			//register.setaLastName("Tanty");
-			RegisterDAO obj = new RegisterDAO();
-			obj.saveStudent(register);
+			Login loginBean = new Login();
+			loginBean.setColgId(17);
+			loginBean.setPassword("heman");
+			LoginDAO loginDAOObj = new LoginDAO();
+			Register registerObj = loginDAOObj.findStudent(loginBean);
+			System.out.println(registerObj.getFirstNameStudent());
+			System.out.println(registerObj.getaId());
 		}
 		catch(Exception ex){
 			ex.printStackTrace();
