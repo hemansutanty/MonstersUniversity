@@ -3,6 +3,7 @@ package com.hemansu.studentregistration.view;
 import com.hemansu.studentregistration.controller.LoginDAO;
 import com.hemansu.studentregistration.model.Login;
 import com.hemansu.studentregistration.model.Register;
+import com.hemansu.studentregistration.model.RegisterBean;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class LoginAction extends ActionSupport{
@@ -14,7 +15,37 @@ public class LoginAction extends ActionSupport{
 	
 	private Login loginBean;
 	private LoginDAO loginDAOObject=new LoginDAO();
+	RegisterBean registerObj = new RegisterBean();
+	Register test = new Register();
 	
+	/**
+	 * @return the test
+	 */
+	public Register getTest() {
+		return test;
+	}
+
+	/**
+	 * @param test the test to set
+	 */
+	public void setTest(Register test) {
+		this.test = test;
+	}
+
+	/**
+	 * @return the registerObj
+	 */
+	public RegisterBean getRegisterObj() {
+		return registerObj;
+	}
+
+	/**
+	 * @param registerObj the registerObj to set
+	 */
+	public void setRegisterObj(RegisterBean registerObj) {
+		this.registerObj = registerObj;
+	}
+
 	/**
 	 * @return the loginBean
 	 */
@@ -29,10 +60,11 @@ public class LoginAction extends ActionSupport{
 		this.loginBean = loginBean;
 	}
 	public String execute(){
-		//System.out.println(getLoginBean().getColgId()+"\t"+getLoginBean().getPassword());
 		try{
-			Register registerObj=loginDAOObject.findStudent(getLoginBean());
-			System.out.println(registerObj.getFirstNameStudent());
+			 test=loginDAOObject.findStudent(getLoginBean());
+			//registerObj.setFirstNameStudent(registerObjEntity.getFirstNameStudent());
+			//System.out.println(test.getFirstNameStudent());
+			//System.out.println(test.getaId());
 		}
 		catch(Exception ex){
 			ex.printStackTrace();

@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.hemansu.studentregistration.controller.RegisterDAO;
 import com.hemansu.studentregistration.model.Register;
+import com.hemansu.studentregistration.model.RegisterBean;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class RegisterAction extends ActionSupport{
@@ -16,6 +17,7 @@ public class RegisterAction extends ActionSupport{
 	private Register registerBean;
 	private String[] genders = {"Male", "Female", "Not Sure"};
 	private RegisterDAO registerDAOObject;
+	private RegisterBean registerBeanObj;
 	
 	public RegisterAction(){
 		registerDAOObject = new RegisterDAO();
@@ -31,6 +33,19 @@ public class RegisterAction extends ActionSupport{
 	 */
 	public void setRegisterBean(Register registerBean) {
 		this.registerBean = registerBean;
+	}
+	
+	/**
+	 * @return the registerBeanObj
+	 */
+	public RegisterBean getRegisterBeanObj() {
+		return registerBeanObj;
+	}
+	/**
+	 * @param registerBeanObj the registerBeanObj to set
+	 */
+	public void setRegisterBeanObj(RegisterBean registerBeanObj) {
+		this.registerBeanObj = registerBeanObj;
 	}
 	/**
 	 * @return the genders

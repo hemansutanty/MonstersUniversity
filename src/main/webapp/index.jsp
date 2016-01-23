@@ -5,7 +5,7 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<style type="text/css">
 		body{
-			background-image: url("monsters_universit.jpg");
+			background-image: url("monsters_university.jpg");
 		}
 	</style>
 </head>

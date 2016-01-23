@@ -7,6 +7,7 @@ h2{
 body{
 	background-image: url("school.png");
 	padding: 2em;
+	font-family: Sans-serif;
 }
 #submitBtn{
 	position:relative;
@@ -76,4 +77,20 @@ body{
 	  	border-top-right-radius: 0;
 	  	margin-bottom: 20px;
 	}
+}
+.midSection{
+	height:480px;
+	width:350px;
+	position: absolute;
+	left:35%;
+	background-color: white;
+	padding:20px;
+}
+.wrapper{
+	height:350px;
+	width:350px;
+	position: absolute;
+	left:35%;
+	background-color: white;
+	padding:2em; 
 }
