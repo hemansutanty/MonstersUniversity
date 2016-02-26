@@ -7,7 +7,7 @@ public class RegisterBean {
 	
 	//personal Information attributes
 	//a is for applicant
-	private int aId;
+	private Integer aId;
 	private String firstNameStudent;
 	private String middleNameStudent;
 	private String lastNameStudent;
@@ -40,8 +40,8 @@ public class RegisterBean {
 	
 	//Required for Admission Details
 	private int iitjeeRank;
-	private int percentage12th;
-	private int percentage10th;
+	private Double percentage12th;
+	private Double percentage10th;
 	private String password;
 	/**
 	 * @return the firstNameStudent
@@ -130,13 +130,13 @@ public class RegisterBean {
 	/**
 	 * @return the aId
 	 */
-	public int getaId() {
+	public Integer getaId() {
 		return aId;
 	}
 	/**
 	 * @param aId the aId to set
 	 */
-	public void setaId(int aId) {
+	public void setaId(Integer aId) {
 		this.aId = aId;
 	}
 	/**
@@ -358,25 +358,25 @@ public class RegisterBean {
 	/**
 	 * @return the percentage12th
 	 */
-	public int getPercentage12th() {
+	public Double getPercentage12th() {
 		return percentage12th;
 	}
 	/**
 	 * @param percentage12th the percentage12th to set
 	 */
-	public void setPercentage12th(int percentage12th) {
+	public void setPercentage12th(Double percentage12th) {
 		this.percentage12th = percentage12th;
 	}
 	/**
 	 * @return the percentage10th
 	 */
-	public int getPercentage10th() {
+	public Double getPercentage10th() {
 		return percentage10th;
 	}
 	/**
 	 * @param percentage10th the percentage10th to set
 	 */
-	public void setPercentage10th(int percentage10th) {
+	public void setPercentage10th(Double percentage10th) {
 		this.percentage10th = percentage10th;
 	}
 	/**

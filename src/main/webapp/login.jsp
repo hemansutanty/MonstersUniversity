@@ -19,6 +19,7 @@
       	<br>  
    	 	</s:form>
    	 	<br>
+   	 	<s:property value="%{exception.message}"/>
    	 	<a href="<s:url action="registerInput"/>">Not Registered yet? Click here to register</a> 
 	</div>
 </body>

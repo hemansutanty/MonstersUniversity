@@ -2,36 +2,35 @@ package com.hemansu.studentregistration.view;
 
 import java.util.Arrays;
 import java.util.List;
-
 import com.hemansu.studentregistration.controller.RegisterDAO;
-import com.hemansu.studentregistration.model.Register;
+import com.hemansu.studentregistration.model.Muniversity;
 import com.hemansu.studentregistration.model.RegisterBean;
 import com.opensymphony.xwork2.ActionSupport;
 
-public class RegisterAction extends ActionSupport{
+public class MuniversityAction extends ActionSupport{
 	
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private Register registerBean;
+	private Muniversity registerBean;
 	private String[] genders = {"Male", "Female", "Not Sure"};
 	private RegisterDAO registerDAOObject;
 	private RegisterBean registerBeanObj;
 	
-	public RegisterAction(){
+	public MuniversityAction(){
 		registerDAOObject = new RegisterDAO();
 	}
 	/**
 	 * @return the registerBean
 	 */
-	public Register getRegisterBean() {
+	public Muniversity getRegisterBean() {
 		return registerBean;
 	}
 	/**
 	 * @param registerBean the registerBean to set
 	 */
-	public void setRegisterBean(Register registerBean) {
+	public void setRegisterBean(Muniversity registerBean) {
 		this.registerBean = registerBean;
 	}
 	

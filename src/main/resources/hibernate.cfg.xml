@@ -22,6 +22,6 @@
         <property name="show_sql">true</property>
         <property name="hbm2ddl.auto">update</property>
  
-        <mapping class="com.hemansu.studentregistration.model.Register" />
+        <mapping class="com.hemansu.studentregistration.model.Muniversity" />
     </session-factory>
 </hibernate-configuration>

@@ -10,10 +10,6 @@
 <body>
 	<center>
 		<h2>Thank You for Registering</h2>
-		
-			<h3>Your Registration Information[University ID]:</h3>
-			<s:property value="registerBeanObj.aId"/>
-		
 	</center>
 </body>
 </html>

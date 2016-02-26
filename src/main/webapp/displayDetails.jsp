@@ -14,7 +14,7 @@
 	<hr>
 		<s:iterator value="test">  	  
 			<b>Name:</b><s:property value="firstNameStudent"/><s:property value="middleNameStudent"/> <s:property value="lastNameStudent"/><br/>
-			<b>University ID:</b><s:property value="aId"/><br/> 
+			<%-- <b>University ID:</b><s:property value="aId"/><br/>  --%>
 			<b>Date of Birth:</b><s:property value="dateOfBirthStudent"/><br/>
 			<b>Email:</b><s:property value="emailStudent"/><br/>
 			<b>Gender:</b><s:property value="genderStudent"/><br/>

@@ -2,7 +2,7 @@ package com.hemansu.studentregistration.view;
 
 import com.hemansu.studentregistration.controller.LoginDAO;
 import com.hemansu.studentregistration.model.Login;
-import com.hemansu.studentregistration.model.Register;
+import com.hemansu.studentregistration.model.Muniversity;
 import com.hemansu.studentregistration.model.RegisterBean;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -16,19 +16,19 @@ public class LoginAction extends ActionSupport{
 	private Login loginBean;
 	private LoginDAO loginDAOObject=new LoginDAO();
 	RegisterBean registerObj = new RegisterBean();
-	Register test = new Register();
+	Muniversity test = new Muniversity();
 	
 	/**
 	 * @return the test
 	 */
-	public Register getTest() {
+	public Muniversity getTest() {
 		return test;
 	}
 
 	/**
 	 * @param test the test to set
 	 */
-	public void setTest(Register test) {
+	public void setTest(Muniversity test) {
 		this.test = test;
 	}
 
@@ -63,12 +63,12 @@ public class LoginAction extends ActionSupport{
 		try{
 			 test=loginDAOObject.findStudent(getLoginBean());
 			//registerObj.setFirstNameStudent(registerObjEntity.getFirstNameStudent());
-			//System.out.println(test.getFirstNameStudent());
-			//System.out.println(test.getaId());
+			System.out.println(test.getFirstNameStudent());
+			System.out.println(test.getaId());
 		}
 		catch(Exception ex){
 			ex.printStackTrace();
-			//return INPUT;
+			return ERROR;
 		}
 		return SUCCESS;
 	}

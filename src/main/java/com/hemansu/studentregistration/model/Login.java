@@ -2,20 +2,20 @@ package com.hemansu.studentregistration.model;
 
 public class Login {
 	
-	private int colgId;
+	private Integer colgId;
 	private String password;
 	
 	
 	/**
 	 * @return the colgId
 	 */
-	public int getColgId() {
+	public Integer getColgId() {
 		return colgId;
 	}
 	/**
 	 * @param colgId the colgId to set
 	 */
-	public void setColgId(int colgId) {
+	public void setColgId(Integer colgId) {
 		this.colgId = colgId;
 	}
 	/**
@@ -30,7 +30,4 @@ public class Login {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
-	
-
 }

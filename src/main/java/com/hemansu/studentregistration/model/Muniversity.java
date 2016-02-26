@@ -7,7 +7,9 @@ import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -15,8 +17,8 @@ import javax.persistence.TemporalType;
 
 
 @Entity
-@Table(name="register")
-public class Register implements Serializable{
+@Table(name="Muniversity")
+public class Muniversity implements Serializable{
 	
 	/**
 	 * 
@@ -24,9 +26,11 @@ public class Register implements Serializable{
 	private static final long serialVersionUID = 1L;
 	//personal Information attributes
 	//a is for applicant
+	@SequenceGenerator(name="seq", initialValue=1001, allocationSize=1)
 	@Id
-	@GeneratedValue
-	private int aId;
+	@Column(name="aid")
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="seq")
+	private Integer aId;
 	@Column(name="afirstname")
 	private String firstNameStudent;
 	@Column(name="amiddlename")
@@ -86,14 +90,22 @@ public class Register implements Serializable{
 	@Column(name="arank")
 	private int iitjeeRank;
 	@Column(name="a12thpercentage")
-	private int percentage12th;
+	private Double percentage12th;
 	@Column(name="a10thpercentage")
-	private int percentage10th;
+	private Double percentage10th;
 	@Column(name="apassword")
 	private String password;
+	
+	/**
+	 * @param aId the aId to set
+	 */
+	public void setaId(Integer aId) {
+		this.aId = aId;
+	}
 	/**
 	 * @return the firstNameStudent
 	 */
+	
 	public String getFirstNameStudent() {
 		return firstNameStudent;
 	}
@@ -178,7 +190,7 @@ public class Register implements Serializable{
 	/**
 	 * @return the aId
 	 */
-	public int getaId() {
+	public Integer getaId() {
 		return aId;
 	}
 	/**
@@ -406,25 +418,25 @@ public class Register implements Serializable{
 	/**
 	 * @return the percentage12th
 	 */
-	public int getPercentage12th() {
+	public Double getPercentage12th() {
 		return percentage12th;
 	}
 	/**
 	 * @param percentage12th the percentage12th to set
 	 */
-	public void setPercentage12th(int percentage12th) {
+	public void setPercentage12th(Double percentage12th) {
 		this.percentage12th = percentage12th;
 	}
 	/**
 	 * @return the percentage10th
 	 */
-	public int getPercentage10th() {
+	public Double getPercentage10th() {
 		return percentage10th;
 	}
 	/**
 	 * @param percentage10th the percentage10th to set
 	 */
-	public void setPercentage10th(int percentage10th) {
+	public void setPercentage10th(Double percentage10th) {
 		this.percentage10th = percentage10th;
 	}
 	/**
