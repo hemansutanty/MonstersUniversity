@@ -2,12 +2,17 @@ package com.hemansu.studentregistration.view;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
+
+import org.apache.struts2.dispatcher.SessionMap;
+import org.apache.struts2.interceptor.SessionAware;
+
 import com.hemansu.studentregistration.controller.RegisterDAO;
 import com.hemansu.studentregistration.model.Muniversity;
 import com.hemansu.studentregistration.model.RegisterBean;
 import com.opensymphony.xwork2.ActionSupport;
 
-public class MuniversityAction extends ActionSupport{
+public class MuniversityAction extends ActionSupport implements SessionAware{
 	
 	/**
 	 * 
@@ -17,6 +22,7 @@ public class MuniversityAction extends ActionSupport{
 	private String[] genders = {"Male", "Female", "Not Sure"};
 	private RegisterDAO registerDAOObject;
 	private RegisterBean registerBeanObj;
+	private SessionMap<String,Object> sessionMap;
 	
 	public MuniversityAction(){
 		registerDAOObject = new RegisterDAO();
@@ -59,7 +65,9 @@ public class MuniversityAction extends ActionSupport{
 	}
 	public String execute(){
 		try{
-			registerDAOObject.saveStudent(getRegisterBean());
+			Integer newId = registerDAOObject.saveStudent(getRegisterBean());
+			sessionMap.put("newId",newId);
+			//System.out.println(session.get("newId"));
 		}
 		catch(Exception ex){
 			System.out.println(ex.getMessage());
@@ -156,5 +164,9 @@ public class MuniversityAction extends ActionSupport{
 		if(registerBean.getPassword().length()==0){
 			addFieldError("registerBean.password", "Please enter Password");
 		}
+	}
+	public void setSession(Map<String, Object> map) {
+		// TODO Auto-generated method stub
+		sessionMap=(SessionMap<String, Object>)map; 
 	}
 }

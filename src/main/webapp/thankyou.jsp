@@ -3,13 +3,18 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Thank You Page</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<title>Thank You Page</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
 	<center>
-		<h2>Thank You for Registering</h2>
+		<h1>Thank You for Registering</h1>
+		<h4>Your new College Id is:<s:property value="#session.newId" /></h4>
+		<br><br>
+		<br><br>
+		<p>Want to check out your Details? <a href="<s:url action="loginInput"/>">Click Here</a></p>
 	</center>
 </body>
 </html>
