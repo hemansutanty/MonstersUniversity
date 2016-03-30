@@ -10,16 +10,16 @@
 </head>
 <body>
 	<div class="wrapper">
+		<s:actionerror class="alert-danger"/>
     	<s:form action="login" enctype="multipart/form-data" theme="bootstrap" cssClass="form-horizontal" >       
       	<h2>login</h2>
       	<hr>
-      	<s:textfield  name="loginBean.colgId" placeholder="Enter the University ID" ></s:textfield>
-	  	<s:textfield  name="loginBean.password" placeholder="Enter the Password"></s:textfield>
-      	<s:submit key="Submit" cssClass="btn btn-primary"></s:submit>      
+      	<s:textfield  key="loginBean.colgId" placeholder="Enter the University ID" ></s:textfield>
+	  	<s:textfield  key="loginBean.password" placeholder="Enter the Password"></s:textfield>
+      	<s:submit key="submit" cssClass="btn btn-primary"></s:submit>      
       	<br>  
    	 	</s:form>
    	 	<br>
-   	 	<s:property value="%{exception.message}"/>
    	 	<a href="<s:url action="registerInput"/>">Not Registered yet? Click here to register</a> 
 	</div>
 </body>

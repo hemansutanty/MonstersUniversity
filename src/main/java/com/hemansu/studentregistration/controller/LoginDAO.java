@@ -11,6 +11,7 @@ public class LoginDAO {
 		Muniversity registerObj=null;
 		Session session = null;
 		try{
+			 System.out.println("Inside LoginDAO Method");
 			 session = HibernateUtil.getSessionFactory().getCurrentSession();
 			 session.beginTransaction();
 			 registerObj = (Muniversity)session.get(Muniversity.class, loginBean.getColgId());

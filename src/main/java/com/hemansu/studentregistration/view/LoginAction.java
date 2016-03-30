@@ -60,16 +60,29 @@ public class LoginAction extends ActionSupport{
 		this.loginBean = loginBean;
 	}
 	public String execute(){
+		
 		try{
+			
 			 test=loginDAOObject.findStudent(getLoginBean());
-			//registerObj.setFirstNameStudent(registerObjEntity.getFirstNameStudent());
-			System.out.println(test.getFirstNameStudent());
-			System.out.println(test.getaId());
 		}
 		catch(Exception ex){
+			addActionError(ex.getMessage());
 			ex.printStackTrace();
 			return ERROR;
 		}
 		return SUCCESS;
+	}
+	public void validate(){
+		
+		//clearFieldErrors();clearErrors();
+		if(loginBean.getColgId()==null || loginBean.getColgId()==0){
+			addFieldError("loginBean.colgId","Please Enter a College ID");
+		}
+		if((loginBean.getColgId().toString()).matches("[^0-9]+")){
+			addFieldError("loginBean.colgId","Please provide a valid College ID");
+		}
+		if(loginBean.getPassword()==null || loginBean.getPassword().equals("")){
+			addFieldError("loginBean.password","Please provide your password");
+		}
 	}
 }

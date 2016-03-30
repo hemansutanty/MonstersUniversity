@@ -147,10 +147,10 @@ public class MuniversityAction extends ActionSupport{
 		if(registerBean.getIitjeeRank()==0){
 			addFieldError("registerBean.iitjeeRank", "Please enter IITJEE rank");
 		}
-		if(registerBean.getPercentage12th()==0){
+		if(registerBean.getPercentage12th()==null){
 			addFieldError("registerBean.percentage12th", "Please enter percentage in 12th");
 		}
-		if(registerBean.getPercentage10th()==0){
+		if(registerBean.getPercentage10th()==null){
 			addFieldError("registerBean.percentage10th", "Please enter percentage in 10th");
 		}
 		if(registerBean.getPassword().length()==0){
