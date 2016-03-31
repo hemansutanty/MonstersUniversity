@@ -1,12 +1,18 @@
 package com.hemansu.studentregistration.view;
 
+import java.util.Map;
+
+import org.apache.struts2.dispatcher.SessionMap;
+import org.apache.struts2.interceptor.SessionAware;
+import org.apache.struts2.interceptor.validation.SkipValidation;
+
 import com.hemansu.studentregistration.controller.LoginDAO;
 import com.hemansu.studentregistration.model.Login;
 import com.hemansu.studentregistration.model.Muniversity;
 import com.hemansu.studentregistration.model.RegisterBean;
 import com.opensymphony.xwork2.ActionSupport;
 
-public class LoginAction extends ActionSupport{
+public class LoginAction extends ActionSupport implements SessionAware{
 
 	/**
 	 * 
@@ -17,7 +23,7 @@ public class LoginAction extends ActionSupport{
 	private LoginDAO loginDAOObject=new LoginDAO();
 	RegisterBean registerObj = new RegisterBean();
 	Muniversity test = new Muniversity();
-	
+	SessionMap<String, String> sessionmap;
 	/**
 	 * @return the test
 	 */
@@ -64,16 +70,20 @@ public class LoginAction extends ActionSupport{
 		try{
 			
 			 test=loginDAOObject.findStudent(getLoginBean());
+			 if(test!=null){
+				 return SUCCESS;
+			 }
+			 else{
+				 return ERROR;
+			 }
 		}
 		catch(Exception ex){
 			addActionError(ex.getMessage());
 			ex.printStackTrace();
 			return ERROR;
 		}
-		return SUCCESS;
 	}
 	public void validate(){
-		
 		//clearFieldErrors();clearErrors();
 		if(loginBean.getColgId()==null || loginBean.getColgId()==0){
 			addFieldError("loginBean.colgId","Please Enter a College ID");
@@ -84,5 +94,16 @@ public class LoginAction extends ActionSupport{
 		if(loginBean.getPassword()==null || loginBean.getPassword().equals("")){
 			addFieldError("loginBean.password","Please provide your password");
 		}
+	}
+
+	public void setSession(Map<String, Object> map) {
+		// TODO Auto-generated method stub
+		sessionmap = (SessionMap) map;
+		sessionmap.put("login", "true");
+	}
+	@SkipValidation
+	public String logout(){
+		sessionmap.invalidate();
+		return SUCCESS;
 	}
 }

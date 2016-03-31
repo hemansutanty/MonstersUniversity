@@ -94,3 +94,11 @@ body{
 	background-color: white;
 	padding:2em; 
 }
+#logoutbtn{
+	border: 1px solid #2196f3;
+	color: #2196f3;
+}
+#logoutbtn:hover{
+	background-color: #2196f3;
+	color: #ffffff;
+}

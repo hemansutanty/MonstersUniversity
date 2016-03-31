@@ -5,6 +5,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<link rel="stylesheet" type="text/css" href="style.css">
+	
 	<title>Details</title>
 </head>
 <body>
@@ -38,6 +39,11 @@
 			<b>12th Percentage:</b><s:property value="percentage12th"/><br/>
 			<b>10th Percentage:</b><s:property value="percentage10th"/><br/>		  
 		</s:iterator>
-	</div> 
+		<center>
+			<p><a class="btnCustom" id="logoutbtn" href="<s:url action="logout"/>" >Logout</a></p>
+		</center>
+		
+	</div>
+	
 </body>
 </html>
