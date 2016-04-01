@@ -28,23 +28,23 @@
 		</global-exception-mappings>
 		
         <action name="add" class="com.hemansu.studentregistration.view.MuniversityAction" method="execute">
-            <result name="success">thankyou.jsp</result>
-            <result name="input">register.jsp</result>
+            <result name="success">/thankyou.jsp</result>
+            <result name="input">/register.jsp</result>
         </action>
         <action name="registerInput" class="com.hemansu.studentregistration.view.MuniversityAction" method="input" >
-    		<result name="input">register.jsp</result>
+    		<result name="input">/register.jsp</result>
 		</action>
 		<action name="login" class="com.hemansu.studentregistration.view.LoginAction" method="execute">
-            <result name="success">displayDetails.jsp</result>
-            <result name="input">login.jsp</result>
-            <result name="error">login.jsp</result>
+            <result name="success">/displayDetails.jsp</result>
+            <result name="input">/login.jsp</result>
+            <result name="error">/login.jsp</result>
         </action>
         <action name="logout" class="com.hemansu.studentregistration.view.LoginAction" method="logout">  
-			<result name="success" >index.jsp</result>
-			<result name="error">error.jsp</result>  
+			<result name="success" >/index.jsp</result>
+			<result name="error">/error.jsp</result>  
 		</action>  
         <action name="loginInput" class="com.hemansu.studentregistration.view.LoginAction" method="input" >
-    		<result name="input">login.jsp</result>
+    		<result name="input">/login.jsp</result>
 		</action>
     </package>
 </struts>
