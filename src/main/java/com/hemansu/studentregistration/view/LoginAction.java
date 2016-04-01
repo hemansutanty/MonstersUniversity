@@ -96,6 +96,7 @@ public class LoginAction extends ActionSupport implements SessionAware{
 		}
 	}
 
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public void setSession(Map<String, Object> map) {
 		// TODO Auto-generated method stub
 		sessionmap = (SessionMap) map;
