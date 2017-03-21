@@ -1,8 +1,8 @@
-##Monsters University
+## Monsters University
 A simple Registration Form, Login Form and Details Page developed with Enterprise build keeping in mind using Maven, Struts2, Hibernate ORM and PostgresSQL.
 
 
-####Steps for Local Deployement(In Eclipse)
+#### Steps for Local Deployement(In Eclipse)
 
 1. Download or Fork the Repository to your local machine.      
 2. Download Postgres Database.    
@@ -15,7 +15,7 @@ A simple Registration Form, Login Form and Details Page developed with Enterpris
 
 Tinker around, Add modules and Have fun.
 
-###The MIT License (MIT)
+### The MIT License (MIT)
 
 Copyright (c) 2016 Hemansu Kumar Tanty
 
